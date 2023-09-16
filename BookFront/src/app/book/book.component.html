@@ -1,0 +1,82 @@
+<div class="container">
+  <h2>Books</h2>
+  <h3>Welcome {{Username}}, Role: {{ Role }}</h3>
+  <button type="button" class="btn btn-cancel" (click)="signOut();">Sign Out</button>
+
+  <ul class="book-list">
+    <li *ngFor="let book of books" class="book-item">
+      <div class="book-content">
+        <div class="book-details">
+          <h3>{{ book.title }}</h3>
+          <p>Author: {{ book.author }}</p>
+        </div>
+        <div class="categories">
+          <div class="category" *ngFor="let category of book.categories">
+            <span class="category-name">{{ category }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="book-actions" *ngIf="Admin && !showUpdateForm">
+        <button class="btn btn-update" (click)="showUpdateForm = true; selectedBook = book;catUpdate(book);">Update</button>
+        <button class="btn btn-delete" (click)="deleteBook(book)">Delete</button>
+      </div>
+      <div *ngIf="showUpdateForm && selectedBook === book">
+        <!-- Update form goes here -->
+      <div class="input-container">
+        <label>Title:</label>
+        <input type="text" [(ngModel)]="selectedBook.title" required>
+        <label>Author:</label>
+        <input type="text" [(ngModel)]="selectedBook.author" required>
+      </div>
+      <div class="categories">
+        <div class="category" *ngFor="let category of selectedBook.categories">
+          <span class="category-name">{{ category }}</span>
+          <span class="category-icon" (click)="removeCategoryFromBook(selectedBook, category)">-</span>
+        </div>
+        <div class="category" *ngFor="let category of updateCategories">
+          <span class="category-name">{{ category }}</span>
+          <span class="category-icon" (click)="addCategoryToBook(selectedBook, category)">+</span>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-update" (click)="updateBook(selectedBook)">Save</button>
+      <button type="button" class="btn btn-cancel" (click)="cancelUpdate()">Cancel</button>
+   
+      </div>
+    </li>
+  </ul>
+  
+<div class="container add-book-container">
+  <h2 class="page-title">Add New Book</h2>
+  <div class="add-book-section">
+    <div class="input-container">
+      <label>Title:</label>
+      <input type="text" [(ngModel)]="newBook.title" required>
+      
+      <label>Author:</label>
+      <input type="text" [(ngModel)]="newBook.author" required>
+      
+      <div class="categories">
+        <div class="category" *ngFor="let category of selectedCategories">
+          <span class="category-name">{{ category }}</span>
+          <span class="category-icon" (click)="removeCategory(category)">-</span>
+        </div>
+      </div>
+
+      <div class="categories">
+        <div class="category" *ngFor="let category of categories">
+          <span class="category-name">{{ category }}</span>
+          <span class="category-icon" (click)="addCategory(category)">+</span>
+          <div *ngIf="Admin">
+            <img src="assets/icons8-trash.svg" class="Trash-Icon" (click)="deleteCategory(category)">
+          </div>
+        </div>
+    </div>
+
+    <div *ngIf="!showUpdateForm"><button class="btn btn-add" (click)="addBook()">Add Book</button></div>
+    <div *ngIf="!showUpdateForm && Admin" class="catNew">
+      <button class="btn btn-add" (click)="addCategoryToDb()">Add Category</button>
+      <input type="text" [(ngModel)]="newCat.Name" required style="width: 200px;">
+    </div>
+    <div class="error-message">{{error}}</div>
+  </div>
+</div>

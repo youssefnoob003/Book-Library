@@ -1,0 +1,205 @@
+/* Common Styles */
+.container {
+  margin: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  margin: 10px;
+}
+
+/* Book List */
+.book-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.book-details {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.book-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.book-details p {
+  margin: 0;
+  color: #666;
+}
+
+.book-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-update {
+  background-color: #007bff;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  margin: 10px;
+}
+
+/* Update Form */
+.update-form {
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.update-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.update-form input[type="text"] {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.update-form button {
+  margin: 10px;
+  width: 100%;
+}
+
+/* Add Book Section */
+.add-book-container {
+  margin-top: 40px;
+}
+
+.add-book-section {
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.add-book-section h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.add-book-section label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.add-book-section input[type="text"] {
+  width: calc(50% - 10px);
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.add-book-section .categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.add-book-section .category {
+  background-color: #f2f2f2;
+  padding: 3px 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.add-book-section .category .category-name {
+  margin-right: 5px;
+}
+
+.category-icon {
+  cursor: pointer;
+  color: #007bff;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.add-book-section button {
+  margin-top: 10px;
+  width: auto;
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.category {
+  background-color: #f2f2f2;
+  padding: 3px 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.error-message {
+  width: 400px;
+  color: #dc3545;
+}
+.Trash-Icon {
+  width: 17px;
+  cursor: pointer;
+}
+
+.category .category-name {
+  margin-right: 5px;
+}
+
+.catNew {
+  display: flex;
+  align-items: center;
+}
